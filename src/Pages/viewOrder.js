@@ -1,13 +1,16 @@
 import React from 'react'
+import About from '../Components/about-me/about'
+import Professional from '../Components/professional/professional'
+import Hobbies from '../Components/hobbies/hobbies'
 
-function viewOrder() {
+function ViewOrder() {
   return (
     <>
-    <about />
-    <professional/>
-    <hobbies />
+    <About />
+    <Professional/>
+    <Hobbies />
     </>
   )
 }
 
-export default viewOrder
+export default ViewOrder
