@@ -16,6 +16,7 @@ function about() {
   return (
     <>
       <AboutContainer>
+        <AboutMeImg src={aboutImg}></AboutMeImg>
         <InfoContainer>
           <InfoTitle>Sobre mim</InfoTitle>
             <InfoBoxContainer>
@@ -31,7 +32,6 @@ function about() {
               <InfoBoxTitle>Endereço</InfoBoxTitle>
               <InfoBoxDetail>R. Lugar Nenhum, 000 - Jd. xxxx - SP</InfoBoxDetail>
             </InfoBox>
-            <AboutMeImg src={aboutImg}></AboutMeImg>
             </InfoBoxContainer>
         </InfoContainer>
 
