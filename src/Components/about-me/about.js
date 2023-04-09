@@ -1,24 +1,22 @@
 import React from 'react'
 import {
-  AboutContainer,
   InfoContainer,
-  InfoTitle,
   InfoBoxContainer,
   InfoBox,
   InfoBoxTitle,
   InfoBoxDetail,
-  AboutMeImg
 } from './about.styles'
 
+import {MainSection, MainTitle, ImgContainer} from '../../Assets/global/global'
 import aboutImg from '../../Assets/images/DSC00815.JPG'
 
 function about() {
   return (
     <>
-      <AboutContainer>
-        <AboutMeImg src={aboutImg}></AboutMeImg>
+      <MainSection>
+        <ImgContainer src={aboutImg}></ImgContainer>
         <InfoContainer>
-          <InfoTitle>Sobre mim</InfoTitle>
+          <MainTitle>Sobre mim</MainTitle>
             <InfoBoxContainer>
               <InfoBox>
               <InfoBoxTitle>Nome: </InfoBoxTitle>
@@ -35,7 +33,7 @@ function about() {
             </InfoBoxContainer>
         </InfoContainer>
 
-    </AboutContainer>
+    </MainSection>
     </>
   )
 }

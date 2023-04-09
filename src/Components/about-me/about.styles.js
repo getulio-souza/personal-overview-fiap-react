@@ -1,12 +1,5 @@
 import styled from 'styled-components'
 
-export const AboutContainer = styled.section `
-    width: 100%;
-    height: 100%;
-    background-image: url('../../Assets/images/2012-10-05 20.42.42.jpg');
-    position: relative;
-`;
-
 export const InfoContainer = styled.article `
     position: absolute;
     top: 50%;
@@ -15,15 +8,11 @@ export const InfoContainer = styled.article `
     color: white;
 `;
 
-export const InfoTitle = styled.h1 `
-    text-align: center;
-
-`;
-
 export const InfoBoxContainer = styled.div `
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding-top: 40px;
 `;
 
 export const InfoBox = styled.div `
@@ -37,18 +26,21 @@ export const InfoBox = styled.div `
     height: 120px;
     min-height: 120px;
     max-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    transition:.5s;
+    &:hover{
+        background-color: #000;
+        cursor: default;
+    }
 `;
 
 export const InfoBoxTitle = styled.h3 `
-
 `;
 
 export const InfoBoxDetail = styled.p `
-
-`;
-
-export const AboutMeImg = styled.img`
-    width: 100%;
-    height: 100%;
-    opacity:0.7;
+ font-size: 15px
 `;
