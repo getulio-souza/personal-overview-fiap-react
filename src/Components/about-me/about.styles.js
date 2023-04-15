@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const InfoContainer = styled.article `
     position: absolute;
     top: 50%;
@@ -9,10 +10,11 @@ export const InfoContainer = styled.article `
 `;
 
 export const InfoBoxContainer = styled.div `
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-top: 40px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap: 40px;
+    padding: 40px 0px;
 `;
 
 export const InfoBox = styled.div `
@@ -33,14 +35,68 @@ export const InfoBox = styled.div `
     gap: 10px;
     transition:.5s;
     &:hover{
-        background-color: #000;
+        background-color: rgb(55, 54, 54);
         cursor: default;
     }
 `;
 
 export const InfoBoxTitle = styled.h3 `
+    text-align:center;
 `;
 
 export const InfoBoxDetail = styled.p `
  font-size: 15px
+`;
+
+export const InfoCepMainContainer = styled.div`
+    background-color: #2a2a2a;
+    padding:10px;
+    border-radius: 20px;
+    transition:.5s;
+    &:hover{
+        background-color: rgb(55, 54, 54);
+        cursor: default;
+    }
+`;
+
+export const InfoCepContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 10px;
+`;
+
+export const InfoCepTitle = styled.h3`
+    text-align:center;
+    padding: 20px 0px;
+`;
+
+export const InfolabelandInput = styled.div`
+    display: flex;
+    align-items:center;
+    gap: 10px;
+`;
+export const InfoLabel = styled.label``;
+
+export const InfoCEPText = styled.h6`
+    font-size:16px;
+`;
+
+export const InfoInput = styled.input ``;
+
+export const CepSearchButton = styled.button`
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: .3s;
+    padding: 10px;
+
+    &:hover{
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+    }
 `;

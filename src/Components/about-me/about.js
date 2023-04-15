@@ -5,12 +5,23 @@ import {
   InfoBox,
   InfoBoxTitle,
   InfoBoxDetail,
+  InfoCepMainContainer,
+  InfoCepContainer,
+  InfoCepTitle,
+  InfolabelandInput,
+  InfoLabel,
+  CepSearchButton,
+  InfoCEPText
 } from './about.styles'
 
 import {MainSection, MainTitle, ImgContainer} from '../../Assets/global/global'
-import aboutImg from '../../Assets/images/DSC00815.JPG'
+import aboutImg from '../../Assets/images/DSC00815.JPG' 
 
 function about() {
+
+  //criando função para usar api
+  
+
   return (
     <>
       <MainSection>
@@ -26,11 +37,18 @@ function about() {
               <InfoBoxTitle>Idade: </InfoBoxTitle>
               <InfoBoxDetail>31 anos</InfoBoxDetail>
             </InfoBox>
-            <InfoBox>
-              <InfoBoxTitle>Endereço</InfoBoxTitle>
-              <InfoBoxDetail>R. Lugar Nenhum, 000 - Jd. xxxx - SP</InfoBoxDetail>
-            </InfoBox>
-            </InfoBoxContainer>
+          </InfoBoxContainer>
+
+          <InfoCepMainContainer>
+          <InfoCepTitle>Consultar CEP</InfoCepTitle>
+          <InfoCepContainer>
+            <InfolabelandInput>
+              <InfoLabel>CEP</InfoLabel>
+             <InfoCEPText>05761190</InfoCEPText>
+            </InfolabelandInput>
+            <CepSearchButton>Pesquisar</CepSearchButton>
+          </InfoCepContainer>
+          </InfoCepMainContainer>
         </InfoContainer>
 
     </MainSection>
