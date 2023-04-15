@@ -68,6 +68,15 @@ export const InfoCepContainer = styled.div`
     gap: 10px;
 `;
 
+export const InfoCepData = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 10px;
+    padding-top:20px;
+`;
+
 export const InfoCepTitle = styled.h3`
     text-align:center;
     padding: 20px 0px;
@@ -75,6 +84,7 @@ export const InfoCepTitle = styled.h3`
 
 export const InfolabelandInput = styled.div`
     display: flex;
+    flex-direction: column;
     align-items:center;
     gap: 10px;
 `;
@@ -84,7 +94,11 @@ export const InfoCEPText = styled.h6`
     font-size:16px;
 `;
 
-export const InfoInput = styled.input ``;
+export const CepInput = styled.input`
+    padding-left:5px;
+    min-width:130px;
+    max-width:130px;
+`;
 
 export const CepSearchButton = styled.button`
     padding: 10px 25px;
@@ -100,3 +114,4 @@ export const CepSearchButton = styled.button`
         color: #fff;
     }
 `;
+
