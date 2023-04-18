@@ -41,5 +41,9 @@ export const TimeLineMark = styled.div`
 `;
 
 export const TimeLineText = styled.p`
-    
+    font-size: 18px;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 10px 20px 0px;
 `;
