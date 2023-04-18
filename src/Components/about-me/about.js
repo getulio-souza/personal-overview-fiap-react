@@ -22,11 +22,11 @@ import ApiCep from '../../services/ApiCep'
  function About() {
 
   //criando função para mostrar mensagem
-   const [input, setInput] = useState(Number('05761190'));
+   const [input, setInput] = useState();
    const [cep, setCep] = useState({});
    
    async function SearchCepInfo() {
-     if (input === '' && setCep.cep === '') {
+     if (input === Number('05761190')  && setCep.cep === '') {
        return true;
      } else {
        alert('Cep inváliado. Por favor, informe apenas o CEP:05761190')
@@ -72,7 +72,8 @@ import ApiCep from '../../services/ApiCep'
                   placeholder='Digite o CEP acima'
                   value={input}
                   onChange={e => setInput(e.target.value)}
-                  maxLength={9}                  
+                  maxLength={9}
+                  required
                 ></CepInput>
             </InfolabelandInput>
               <CepSearchButton onClick = {SearchCepInfo}>Pesquisar</CepSearchButton>

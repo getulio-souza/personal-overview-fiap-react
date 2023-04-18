@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const InfoContainer = styled.article `
     position: absolute;
     top: 50%;
@@ -79,7 +78,7 @@ export const InfoCepData = styled.div`
 
 export const InfoCepTitle = styled.h3`
     text-align:center;
-    padding: 20px 0px;
+    padding: 10px 0px;
 `;
 
 export const InfolabelandInput = styled.div`
@@ -95,9 +94,13 @@ export const InfoCEPText = styled.h6`
 `;
 
 export const CepInput = styled.input`
-    padding-left:5px;
+    /* padding-left:5px; */
     min-width:130px;
     max-width:130px;
+    padding: 10px 15px;
+    border-radius:10px;
+    padding:10px 15px;
+    font-size:10px;
 `;
 
 export const CepSearchButton = styled.button`
@@ -107,6 +110,7 @@ export const CepSearchButton = styled.button`
     border-radius: 8px;
     transition: .3s;
     padding: 10px;
+    margin: 10px 0px;
 
     &:hover{
         background-color: transparent;
