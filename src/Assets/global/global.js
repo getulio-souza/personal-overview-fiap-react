@@ -13,11 +13,13 @@ export const MainSection = styled.div`
 
 export const MainTitle = styled.h1 `
     text-align: center;
+    font-size:32px;
 `;
 
 export const ImgContainer = styled.img`
     width: 100%;
-    height: 100%;
+    height: 100;
     opacity:0.7;
+    object-fit:cover;
 `;
 

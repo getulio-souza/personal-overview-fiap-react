@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
+import { Colors } from '../../shared/DesignTokens';
+
 export const InfoContainer = styled.article `
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: ${Colors.TEXT_WHITE};
 `;
 
 export const InfoBoxContainer = styled.div `

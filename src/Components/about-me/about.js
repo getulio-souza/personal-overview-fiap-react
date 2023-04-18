@@ -28,9 +28,7 @@ import ApiCep from '../../services/ApiCep'
    async function SearchCepInfo() {
      if (input === Number('05761190')  && setCep.cep === '') {
        return true;
-     } else {
-       alert('Cep inváliado. Por favor, informe apenas o CEP:05761190')
-     }
+     } 
      
      //função que chama a API
      try {

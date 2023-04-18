@@ -14,8 +14,11 @@ export const HobbiesBox = styled.div`
     background-color: #2a2a2a;
     padding:15px;
     border-radius:15px;
-    min-height:200px;
-    min-width:240px;
+    min-height: 280px;
+    max-height: 280px;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
     box-shadow: rgb(26, 23, 23) 1px 2px 3px;
     transition: 0.5s;
     &:hover{
@@ -25,12 +28,18 @@ export const HobbiesBox = styled.div`
 `;
 
 export const HobbieText = styled.div`
-   font-size:14px;
+    font-size:18px;
     padding-top:10px;
+    max-width: 200px;
+    min-width: 200px;
+    margin: 0 auto;
 `;
 
 export const HobbiesImg = styled.img `
    width:70px;
+   min-width:70px;
+   max-width:70px;
+   padding: 10px 0px;
 `;
 
 
