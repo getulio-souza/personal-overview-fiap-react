@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InfoContainer = styled.article `
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 36%;
     color: #fff;
     padding: 10px 50px 20px 0px;
     border-radius: 15px
