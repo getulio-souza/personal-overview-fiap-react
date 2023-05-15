@@ -2,3 +2,17 @@ input.input-error,
 select.input-error{
   border-color: red;
 }
+
+input.input-success,
+select.input-success{
+  border-color: green;
+}
+
+.message-text-error{
+  color: red;
+  font-size: 12px;
+}
+
+.button:disabled{
+  opacity: 0.35;
+}

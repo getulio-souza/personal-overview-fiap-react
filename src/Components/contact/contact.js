@@ -1,5 +1,5 @@
 
-import {useFormik } from 'formik';
+import { useFormik } from 'formik';
 import { basicSchema } from '../../schemas/schemas';
 import "./contact.css"
 
@@ -22,13 +22,16 @@ import {
 } from './contact.styles'
 import { MainTitle } from '../../Assets/global/global';
 
-const onSubmit = () => {
-  console.log("submitted")
+const onSubmit =  async (values, actions) => {
+  console.log(values)
+  console.log(actions)
+  await new Promise((resolve)=> setTimeout((resolve,1000)))
+  actions.resetForm();
 }
 
 const Contact = () =>  {
 
-  const {values, errors, touched, handleChange, handleSubmit} = useFormik({
+  const {values, errors, touched, isSubmitting, handleChange, handleSubmit} = useFormik({
      initialValues: {           
       username: "", 
       email: "",
@@ -39,7 +42,6 @@ const Contact = () =>  {
      onSubmit,
   });
 
-  console.log(errors)
 
   return (
       <ContactContainer>
@@ -54,6 +56,7 @@ const Contact = () =>  {
                   placeholder='Digite seu nome'
                   values={values.username}
                   onChange={handleChange}
+                  className={errors.name && touched.name ? "input-error" : "input-success"}
                 >
                 </FormNameInput>
           
@@ -64,14 +67,16 @@ const Contact = () =>  {
                   placeholder='Digite seu e-mail'
                   values={values.email}
                   onChange={handleChange}
-                  className={errors.email&& touched.email ? "input-error" : ""}
-                />
+                  className={errors.email && touched.email ? "input-error" : "input-success"}
+                ></FormEmailInput>
+                {errors.email && touched.email && <p className='message-text-error'>{errors.email} </p>}
               <FormTextArea
                 name='textarea'
                 as="textarea"
                 values={values.textarea}
                 onChange={handleChange}
                 placeholder='Digite sua mensagem aqui'
+                className={errors.textarea && touched.textarea ? "input-error" : "input-success"}
               >
           </FormTextArea>
 
@@ -81,17 +86,21 @@ const Contact = () =>  {
               <FormGenderBox>
                   <FormGenderRadio 
                     type="radio"
+                    name='gender'
                     values={values.gender}
                     onChange={handleChange}
+                    className={errors.gender && touched.gender ? "input-error" : "input-success"}
                   >
                   </FormGenderRadio>
                   <FormGenderName>Masculino</FormGenderName>
                 </FormGenderBox>
               <FormGenderBox>
                   <FormGenderRadio 
+                    name='gender'
                     type="radio"
                     values={values.gender}
                     onChange={handleChange}
+                    className={errors.gender && touched.gender ? "input-error" : "input-success"}
                   >
                   </FormGenderRadio>
                   <FormGenderName>Feminino</FormGenderName>
@@ -101,6 +110,7 @@ const Contact = () =>  {
 
               <FormSendButton
                 type='submit'
+                disabled={isSubmitting}
               >
               Enviar
             </FormSendButton>

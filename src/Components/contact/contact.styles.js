@@ -23,7 +23,7 @@ export const FormNameLabel = styled.label `
 export const FormNameInput = styled.input `
     border-radius:5px;
     width:100%;
-    min-height: 23px;
+    min-height: 30px;
     padding-left: 5px;
 
 `;
@@ -37,7 +37,7 @@ export const FormEmailLabel = styled.label `
 export const FormEmailInput = styled.input `
     border-radius:5px;
     width:100%;
-    min-height: 23px;
+    min-height: 30px;
     padding-left: 5px;
 `;
 
@@ -83,9 +83,4 @@ export const FormSendButton = styled.button `
     border-radius:10px;
     cursor:pointer;
     transition: 0.5s;
-    &:hover{
-        background-color:transparent;
-        border: 1px solid #fff;
-        color: #fff;
-    }
 `;
