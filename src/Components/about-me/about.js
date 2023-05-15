@@ -58,9 +58,8 @@ import ApiCep from '../../services/ApiCep'
               <InfoBoxTitle>Idade: </InfoBoxTitle>
               <InfoBoxDetail>31 anos</InfoBoxDetail>
             </InfoBox>
-          </InfoBoxContainer>
-
-          <InfoCepMainContainer>
+      
+            <InfoCepMainContainer>
           <InfoCepTitle>Consultar CEP</InfoCepTitle>
           <InfoCepContainer>
             <InfolabelandInput>
@@ -76,7 +75,6 @@ import ApiCep from '../../services/ApiCep'
             </InfolabelandInput>
               <CepSearchButton onClick = {SearchCepInfo}>Pesquisar</CepSearchButton>
             </InfoCepContainer>
-            
             {Object.keys(cep).length > 0 && (
               <InfoCepData>
                 <span><strong>Rua: </strong>{cep.logradouro}</span>
@@ -86,6 +84,7 @@ import ApiCep from '../../services/ApiCep'
               </InfoCepData>
             )}
           </InfoCepMainContainer>
+          </InfoBoxContainer>
         </InfoContainer>
 
     </MainSection>

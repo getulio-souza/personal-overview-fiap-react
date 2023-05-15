@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
 export const HobbiesContainer = styled.div`
     display: flex;
-    padding-top: 40px;
     justify-content: space-between;
     align-items: baseline;
     gap: 20px;
     text-align: center;
     text-shadow: rgb(46, 44, 44) 1px 2px 3px;
+    @media (max-width: 700px){
+        flex-direction:column;
+    }
 `;
 
 export const HobbiesBox = styled.div`
@@ -43,4 +45,8 @@ export const HobbiesImg = styled.img `
 `;
 
 
-
+export const ImgContainerHobbies = styled.img `
+    @media (max-width:700px){
+        min-height:120vh;
+    }
+`;

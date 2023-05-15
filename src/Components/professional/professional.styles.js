@@ -1,18 +1,22 @@
 import styled from "styled-components";
 
-export const InfoContainer = styled.article `
+export const InfoContainer = styled.article`
     position: absolute;
-    top: 20%;
-    left: 36%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
-    padding: 10px 50px 20px 0px;
-    border-radius: 15px
+    border-radius: 15px;
 `;
 
 export const TimeLineContainer = styled.div`
     display: flex;
     text-align: center;
-    padding-top: 40px;
+    @media (max-width: 700px){
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
 `;
 
 export const TimeLineYearBox = styled.div`
@@ -21,6 +25,10 @@ export const TimeLineYearBox = styled.div`
 
 export const TimeLineYear = styled.div`
     padding-left: 20px;
+    @media (max-width: 700px){
+    font-size: 20px;
+    font-weight: bold;
+    }
 `;
 
 export const TimeLine = styled.div`

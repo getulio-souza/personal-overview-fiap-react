@@ -11,11 +11,14 @@ export const InfoContainer = styled.article`
 `;
 
 export const InfoBoxContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   align-items: center;
   gap: 40px;
   padding: 40px 0px;
+  @media (max-width:700px){
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const InfoBox = styled.div`
@@ -51,6 +54,7 @@ export const InfoBoxDetail = styled.p`
 `;
 
 export const InfoCepMainContainer = styled.div`
+  grid-column: span 2;
   background-color: #2a2a2a;
   padding: 10px;
   border-radius: 20px;
@@ -58,6 +62,9 @@ export const InfoCepMainContainer = styled.div`
   &:hover {
     background-color: rgb(55, 54, 54);
     cursor: default;
+  }
+  @media(max-width: 700px){
+    grid-column:auto;
   }
 `;
 
