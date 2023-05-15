@@ -1,6 +1,7 @@
 
-import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup'
+import {useFormik } from 'formik';
+import { basicSchema } from '../../schemas/schemas';
+import "./contact.css"
 
 import React from 'react'; 
 import {
@@ -21,48 +22,55 @@ import {
 } from './contact.styles'
 import { MainTitle } from '../../Assets/global/global';
 
-function Contact() {
+const onSubmit = () => {
+  console.log("submitted")
+}
+
+const Contact = () =>  {
+
+  const {values, errors, touched, handleChange, handleSubmit} = useFormik({
+     initialValues: {           
+      username: "", 
+      email: "",
+      gender: "",
+      textarea: ""
+     },
+     validationSchema: basicSchema,
+     onSubmit,
+  });
+
+  console.log(errors)
+
   return (
       <ContactContainer>
         <MainTitle>Entre em contato</MainTitle>
-          <Formik
-          initialValues={{
-            name: '',
-            email: '',
-            textarea: '',
-            gender: ''
-        }}
-        
-        validationSchema={
-          Yup.object({
-            name: Yup.string().required("Required"),
-          })
-        }
-
-        onSubmit={(values, { setSubmitting }) => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }}
-          >
-            <FormContainer>
+            <FormContainer
+              onSubmit={handleSubmit}
+            >
               <FormNameLabel>Nome</FormNameLabel>
                 <FormNameInput
                   name='name'
                   type='text'
                   placeholder='Digite seu nome'
+                  values={values.username}
+                  onChange={handleChange}
                 >
                 </FormNameInput>
-            <ErrorMessage name='name' />
           
                 <FormEmailLabel>E-mail</FormEmailLabel>
                 <FormEmailInput 
                   name='email'
                   type='email'
                   placeholder='Digite seu e-mail'
-                >
-                </FormEmailInput>
+                  values={values.email}
+                  onChange={handleChange}
+                  className={errors.email&& touched.email ? "input-error" : ""}
+                />
               <FormTextArea
+                name='textarea'
                 as="textarea"
+                values={values.textarea}
+                onChange={handleChange}
                 placeholder='Digite sua mensagem aqui'
               >
           </FormTextArea>
@@ -71,11 +79,21 @@ function Contact() {
             <FormGenderTitle>Gender</FormGenderTitle>
               <FormGenderContainer>
               <FormGenderBox>
-                  <FormGenderRadio type="radio"></FormGenderRadio>
+                  <FormGenderRadio 
+                    type="radio"
+                    values={values.gender}
+                    onChange={handleChange}
+                  >
+                  </FormGenderRadio>
                   <FormGenderName>Masculino</FormGenderName>
                 </FormGenderBox>
               <FormGenderBox>
-                  <FormGenderRadio type="radio"></FormGenderRadio>
+                  <FormGenderRadio 
+                    type="radio"
+                    values={values.gender}
+                    onChange={handleChange}
+                  >
+                  </FormGenderRadio>
                   <FormGenderName>Feminino</FormGenderName>
                 </FormGenderBox>
             </FormGenderContainer>
@@ -87,9 +105,10 @@ function Contact() {
               Enviar
             </FormSendButton>
             </FormContainer>
-          </Formik>
     </ContactContainer>
   )
 }
 
 export default Contact
+
+//https://www.youtube.com/watch?v=7Ophfq0lEAY&t=2s 11:19
