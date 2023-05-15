@@ -22,8 +22,8 @@ export const ImgContainer = styled.img`
     min-height:100vh; 
     opacity:0.7;
     object-fit:cover;
-    @media (max-width:700px){
-        min-height:110vh;
+    @media (max-width:900px){
+        min-height:130vh;
     }
 `;
 

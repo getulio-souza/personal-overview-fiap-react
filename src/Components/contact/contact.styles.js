@@ -5,6 +5,10 @@ export const ContactContainer = styled.section`
     min-height: 100vh;
     background-image: linear-gradient(to right, #1c2127, #232d30, #2e3837, #3c433f, #4c4e47);`;
 
+export const ContactInnerContainer = styled.div`
+    padding-top: 7rem;
+`;
+
 export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
@@ -53,6 +57,7 @@ export const FormTextArea = styled.textarea `
 export const FormGender = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 10px 0px;
 `;
 
 export const FormGenderBox = styled.div`
@@ -83,4 +88,7 @@ export const FormSendButton = styled.button `
     border-radius:10px;
     cursor:pointer;
     transition: 0.5s;
+    width:50%;
+    font-size: 20px;
+    font-weight: 700;
 `;

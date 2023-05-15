@@ -6,6 +6,7 @@ import "./contact.css"
 import React from 'react'; 
 import {
     ContactContainer,
+    ContactInnerContainer,
     FormContainer,
     FormNameLabel,
     FormNameInput,
@@ -45,6 +46,7 @@ const Contact = () =>  {
 
   return (
       <ContactContainer>
+        <ContactInnerContainer>
         <MainTitle>Entre em contato</MainTitle>
             <FormContainer
               onSubmit={handleSubmit}
@@ -115,6 +117,7 @@ const Contact = () =>  {
               Enviar
             </FormSendButton>
             </FormContainer>
+        </ContactInnerContainer>
     </ContactContainer>
   )
 }

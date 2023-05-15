@@ -21,6 +21,7 @@ export const TimeLineContainer = styled.div`
 
 export const TimeLineYearBox = styled.div`
     text-shadow: 1px 2px 3px #2e2c2c;   
+    padding-bottom:10px;
 `;
 
 export const TimeLineYear = styled.div`

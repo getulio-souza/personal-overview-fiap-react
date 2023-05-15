@@ -23,9 +23,14 @@ export const HobbiesBox = styled.div`
     max-width: 240px;
     box-shadow: rgb(26, 23, 23) 1px 2px 3px;
     transition: 0.5s;
+
     &:hover{
         cursor:default;
         background-color: rgb(55, 54, 54);
+    }
+    @media (max-width:700px){
+        min-height: auto;
+        max-height: auto;
     }
 `;
 
@@ -35,6 +40,9 @@ export const HobbieText = styled.div`
     max-width: 200px;
     min-width: 200px;
     margin: 0 auto;
+    @media (max-width:900px){
+        font-size: 14px;
+    }
 `;
 
 export const HobbiesImg = styled.img `

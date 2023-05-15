@@ -14,7 +14,7 @@ function hobbies() {
       <MainSection>
         <ImgContainer src={aboutImg}></ImgContainer>
         <InfoContainer>
-        <MainTitle>Meus hobbies</MainTitle>
+        <MainTitle style={{paddingBottom:'40px'}}>Meus hobbies</MainTitle>
         <HobbiesContainer>
             <HobbiesBox>
               <HobbiesImg src={show} ></HobbiesImg>
