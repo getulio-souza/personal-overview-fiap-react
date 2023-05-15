@@ -35,7 +35,7 @@ const Contact = () =>  {
      initialValues: {           
       username: "", 
       email: "",
-      gender: "",
+      option: "",
       textarea: ""
      },
      validationSchema: basicSchema,
@@ -86,21 +86,21 @@ const Contact = () =>  {
               <FormGenderBox>
                   <FormGenderRadio 
                     type="radio"
-                    name='gender'
-                    values={values.gender}
+                    name='option'
+                    values={values.option}
                     onChange={handleChange}
-                    className={errors.gender && touched.gender ? "input-error" : "input-success"}
+                    className={errors.option && touched.option ? "input-error" : "input-success"}
                   >
                   </FormGenderRadio>
                   <FormGenderName>Masculino</FormGenderName>
                 </FormGenderBox>
               <FormGenderBox>
                   <FormGenderRadio 
-                    name='gender'
+                    name='option'
                     type="radio"
-                    values={values.gender}
+                    values={values.option}
                     onChange={handleChange}
-                    className={errors.gender && touched.gender ? "input-error" : "input-success"}
+                    className={errors.option && touched.option ? "input-error" : "input-success"}
                   >
                   </FormGenderRadio>
                   <FormGenderName>Feminino</FormGenderName>
