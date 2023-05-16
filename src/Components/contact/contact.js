@@ -53,7 +53,7 @@ const Contact = () => {
     const successMessage = document.getElementById("success");
     const errorMessage = document.getElementById("danger");
 
-    if (name.value === '' | email.value === '' | message.value === '') {
+    if (name.value === '' && email.value === '' && message.value === '') {
       errorMessage.style.display = 'block'
     } else {
       setTimeout(() => {
