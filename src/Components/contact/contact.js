@@ -170,5 +170,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-//https://www.youtube.com/watch?v=7Ophfq0lEAY&t=2s 11:19
