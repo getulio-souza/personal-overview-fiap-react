@@ -32,21 +32,44 @@ const onSubmit =  async (values, actions) => {
   actions.resetForm();
 }
 
-const Contact = () =>  {
+const Contact = () => {
 
-    //emailjs
-    const form = useRef();
-
-    const sendEmail = (e) => {
-      e.preventDefault();
-
-      emailjs.sendForm('service_mqop51b', 'template_xaazmgm', form.current, 'DkdeshjOorWhhfZWm')
-
-      e.target.reset();
-
-
+  //emailjs
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_mqop51b', 'template_xaazmgm', form.current, 'DkdeshjOorWhhfZWm')
+    e.target.reset();
   }
-  
+
+  //handle submit button messsage
+
+  const messageAlert = (e) => {
+    e.preventDefault();
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('textarea')
+
+    const successMessage = document.getElementById("success");
+    const errorMessage = document.getElementById("danger");
+
+    if (name.value === '' | email.value === '' | message.value === '') {
+      errorMessage.style.display = 'block'
+    } else {
+      setTimeout(() => {
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      }, 2000);
+      successMessage.style.display = 'block'
+    }
+
+    setTimeout(() => {
+      errorMessage.style.display = 'none'
+      successMessage.style.display = 'none'
+    }, 4000)
+  }
+   
   //form validation
   const {values, errors, touched, isSubmitting, handleChange, handleSubmit} = useFormik({
      initialValues: {           
@@ -69,7 +92,8 @@ const Contact = () =>  {
               ref={form}
             >
               <FormNameLabel>Nome</FormNameLabel>
-                <FormNameInput
+          <FormNameInput
+                  id='name'
                   name='name'
                   type='text'
                   placeholder='Digite seu nome'
@@ -80,7 +104,8 @@ const Contact = () =>  {
                 </FormNameInput>
           
                 <FormEmailLabel>E-mail</FormEmailLabel>
-                <FormEmailInput 
+                <FormEmailInput
+                  id='email' 
                   name='email'
                   type='email'
                   placeholder='Digite seu e-mail'
@@ -89,7 +114,8 @@ const Contact = () =>  {
                   className={errors.email && touched.email ? "input-error" : "input-success"}
                 ></FormEmailInput>
                 {errors.email && touched.email && <p className='message-text-error'>{errors.email} </p>}
-              <FormTextArea
+          <FormTextArea
+                id="textarea"
                 name='textarea'
                 as="textarea"
                 values={values.textarea}
@@ -126,14 +152,17 @@ const Contact = () =>  {
                 </FormGenderBox>
             </FormGenderContainer>
           </FormGender>
-
               <FormSendButton
                 type='submit'
                 disabled={isSubmitting}
+                onClick={messageAlert}
               >
               Enviar
           </FormSendButton>
-          {}
+          <div className='alert-message'>
+          <p className="success" id='success'>Sua mensagem foi enviada com sucesso!</p>
+          <p className="danger" id='danger'>Houve um erro. Confira se todos os campos foram preenchidos corretamente</p>
+          </div>
             </FormContainer>
         </ContactInnerContainer>
     </ContactContainer>
